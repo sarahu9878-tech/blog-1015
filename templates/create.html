@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增文章</title>
+</head>
+<body>
+    <h1>新增文章</h1>
+
+    <form action="{{ url_for('create_post') }}" method="POST">
+
+        <p>
+            <label for="title">文章標題：</label><br>
+            <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="請輸入文章標題"
+                required
+            >
+        </p>
+
+        <p>
+            <label for="author">作者：</label><br>
+            <input
+                type="text"
+                id="author"
+                name="author"
+                placeholder="請輸入作者名稱"
+                required
+            >
+        </p>
+
+        <p>
+            <label for="content">文章內容：</label><br>
+            <textarea
+                id="content"
+                name="content"
+                rows="10"
+                cols="50"
+                placeholder="請輸入文章內容"
+                required
+            ></textarea>
+        </p>
+
+        <button type="submit">發布文章</button>
+
+    </form>
+
+    <p>
+        <a href="{{ url_for('index') }}">返回首頁</a>
+    </p>
+</body>
+</html>
